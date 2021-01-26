@@ -1,6 +1,8 @@
 import time
 import random
 import sys
+from playsound import playsound
+
 
 
 # Make sure that all commands input are capital case
@@ -35,11 +37,11 @@ def scary_rock():
     slash = 10
     name_hp = 100
     magic_type_1 = ""
-    Glaciate_rng = 0
-    if boost == "Attack":
-        slash = 12
-    if boost == "Health":
-        name_hp = 102
+    Glaciate_rng = 10
+    # if boost == "Attack":
+    #     slash = 12
+    # if boost == "Health":
+    #     name_hp = 102
     print("You encounter an armoured Gargoyle, looming over the large corridor!")
     time.sleep(2)
     while rock_hp > 0:
@@ -93,7 +95,7 @@ def scary_rock():
             if prayer_buff > 8:
                 print("Your attack damage also got buffed!")
 
-        if Glaciate_rng <= 7:
+        if Glaciate_rng < 7:
             print("The Gargoyle was frozen!")
             time.sleep(1)
             print("He can't move!")
@@ -348,20 +350,26 @@ def Wyvren():
     magic_type_1 = ""
     Glaciate_rng = 0
     dragon_hp = 300
-    if boost == "Attack":
-        slash = 12
-    if boost == "Health":
-        name_hp = 102
-    if second_boost == "Attack":
-        slash = slash + 4
+    # if boost == "Attack":
+    #     slash = 12
+    # if boost == "Health":
+    #     name_hp = 102
+    # if second_boost == "Attack":
+    #     slash = slash + 4
+    # if second_boost == "Health":
+    #   name_hp = name_hp + 4
+    # if second_boost == "Incinerate":
+    #   burn = 24
+    # if second_boost == "Prayer":
+    #   prayer = 10
     print("The Wyvren roars in approval, and accepts your challenge. ")
     time.sleep(2)
     while dragon_hp > 0:
         time.sleep(1)
         print("What move will you use? ")
         print("Slash, Magic, Prayer: ")
-        combat_c = input("").lower()
-        if combat_c != "Slash" or "Magic" or "Prayer":
+        combat_c = input("")
+        if combat_c != "Slash" and combat_c != "Magic" and combat_c != "Prayer":
             print("Let's use an actual action. ")
             time.sleep(1)
             print("What move will you use? ")
@@ -392,14 +400,14 @@ def Wyvren():
 
             elif magic_type_1 == "Glaciate":
                 Glaciate_rng = random.randint(1, 10)
-                if Glaciate_rng <= 7:
+                if Glaciate_rng <= 6:
                     print("You froze the Wyvren!")
                     time.sleep(1.5)
                     print("It froze his fire! ")
                     time.sleep(1.5)
                     print("It took heavy damage! ")
-                    print("Wyvren hp: ", dragon_hp)
                     dragon_hp = dragon_hp - 90
+                    print("Wyvren hp: ", dragon_hp)
                 elif Glaciate_rng > 7:
                     print("Glaciate failed!")
                     time.sleep(2)
@@ -414,10 +422,6 @@ def Wyvren():
             if prayer_buff > 8:
                 print("Your attack damage also got buffed!")
 
-        if Glaciate_rng <= 7:
-            print("The Wyvren was frozen!")
-            time.sleep(1)
-            print("He can't move!")
         elif Glaciate_rng > 7:
             print("The Wyvren slams you for 15 damage!")
             time.sleep(1)
@@ -435,7 +439,6 @@ def Wyvren():
             print("You died a sad an painful death, forgotten in the depths of  the dungeon. ")
             time.sleep(2)
 
-
 def left_path():
     print("You chose to enter the left path. ")
     time.sleep(2)
@@ -445,24 +448,28 @@ def left_path():
     time.sleep(2)
     print("Challenge? ")
     print(" Y/N?")
-    challenge = input("").lower()
-    while challenge != "Y" or "N":
-        if challenge == "Y":
-            Wyvren()
-        elif challenge == "N":
-            print("You return to the main path in cowardice. ")
-            time.sleep(2)
-            choice()
-        if challenge != "Y" or "N":
-            print("You cannot", challenge, "it. ")
-            time.sleep(2)
-            print("Challenge? ")
-            print(" Y/N?")
-
+    challenge = input("")
+    if challenge == "Y":
+      Wyvren()
+    elif challenge == "N":
+        print("You return to the main path in cowardice. ")
+        time.sleep(2)
+        choice()
+    while challenge != "Y" and challenge != "N":
+      print("You cannot", challenge, "it. ")
+      time.sleep(2)
+      print("Challenge? ")
+      print(" Y/N?")
+      challenge = input("").lower()
 
 def right_path():
-    print("hi")
-
+  print("You enter the dark, haunting room. ")
+  time.sleep(1.5)
+  print("Many graves surround you as you walk deeper into the room. ")
+  time.sleep(1.5)
+  print("One of the shadows in the room stir.")
+  time.sleep(2)
+  necromancer()
 
 def choice():
     time.sleep(2)
@@ -479,13 +486,15 @@ def choice():
     if left_or_right == "Right":
         right_path()
 
-
 def necromancer():
-    print("hi")
+    print("A Necromancer comes out of the shadow and attacks you! ")
 
 print("-----------------------")
 print("Welcome to The Dungeon")
 print("-----------------------")
+playsound.playsound("ello.mp3")
+
+
 
 time.sleep(1.5)
 name = input("State your name: ")
@@ -505,11 +514,11 @@ if name == "b":
 if name == "c":
     print("Skipping...")
     time.sleep(1.5)
-    Wyvren()
+    left_path()
 if name == "d":
     print("Skipping...")
     time.sleep(1.5)
-    necromancer()
+    right_path()
 
 print("")
 

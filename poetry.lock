@@ -1,5 +1,13 @@
 [[package]]
 category = "main"
+description = "Pure Python, cross platform, single function module with no dependencies for playing sounds."
+name = "playsound"
+optional = false
+python-versions = "*"
+version = "1.2.2"
+
+[[package]]
+category = "main"
 description = "Python Game Development"
 name = "pygame"
 optional = false
@@ -7,10 +15,13 @@ python-versions = "*"
 version = "2.0.1"
 
 [metadata]
-content-hash = "3361a077345a17fc0d26700f17894f95fab7fb9cad85c12d6dca2caf000b24b9"
+content-hash = "a54c30d1832d525ea431306742170a4f729cac2378646602e9abc06ade85b2b2"
 python-versions = "^3.8"
 
 [metadata.files]
+playsound = [
+    {file = "playsound-1.2.2-py2.py3-none-any.whl", hash = "sha256:1e83750a5325cbccee03d6e751ba3e78c037ac95b95a3ba1f38d0c5aca9e1a34"},
+]
 pygame = [
     {file = "pygame-2.0.1-cp27-cp27m-macosx_10_9_intel.whl", hash = "sha256:49c2f58559c1fbf4ba258e4b141578ccb0e83da3d4f823894f6171a8f0d594ed"},
     {file = "pygame-2.0.1-cp27-cp27m-win32.whl", hash = "sha256:0571dde0277483f5060c8ee43cbfd8df5776b12505e3948eee241c8ce9b93371"},
