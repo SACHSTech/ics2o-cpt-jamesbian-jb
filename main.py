@@ -1,8 +1,18 @@
 import time
 import random
 import sys
-from playsound import playsound
 
+
+'''
+--------------------------
+Name: main.py
+Purpose: Advneture game that quizzes users about their computer knowledge based on this Computer Studies Course
+
+Author: James Bian
+
+Created: date 27/01/2021
+--------------------------
+'''
 
 
 # Make sure that all commands input are capital case
