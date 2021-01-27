@@ -40,10 +40,10 @@ def scary_rock():
     magic_type_1 = ""
     Glaciate_rng = 10
     Slash_done = False
-    # if boost == "Attack":
-    #     slash = 12
-    # if boost == "Health":
-    #     name_hp = 120
+    if boost == "Attack":
+        slash = 12
+    if boost == "Health":
+        name_hp = 120
     print("You encounter an armoured Gargoyle, looming over the large corridor!")
     time.sleep(2)
     while rock_hp > 0:
@@ -265,7 +265,7 @@ def dummy():
         dummy_hith_2 = dummy_hith - burn
         print ("Incinerate or Glaciate: ")
         magic_type = input("")
-        while combat_a != "Incinerate" or "Glaciate":
+        while magic_type != "Incinerate" and magic_type != "Glaciate":
             print("I said we doin Magic today.")
             time.sleep(1.5)
             print("")
@@ -386,18 +386,18 @@ def Wyvren():
     Glaciate_rng = 0
     drag_hp = 300
     Slash_done = False
-    # if boost == "Attack":
-    #     slash = 18
-    # if boost == "Health":
-    #     name_hp = 120
-    # if second_boost == "Attack":
-    #     slash = slash + 8
-    # if second_boost == "Health":
-    #   name_hp = name_hp + 40
-    # if second_boost == "Incinerate":
-    #   burn = 40
-    # if second_boost == "Prayer":
-    #   prayer = 10
+    if boost == "Attack":
+        slash = 18
+    if boost == "Health":
+        name_hp = 120
+    if second_boost == "Attack":
+        slash = slash + 8
+    if second_boost == "Health":
+      name_hp = name_hp + 40
+    if second_boost == "Incinerate":
+      burn = 40
+    if second_boost == "Prayer":
+      prayer = 10
     print("The Wyvren roars in approval, and accepts your challenge. ")
     time.sleep(2)
 
@@ -636,19 +636,18 @@ def final():
   time.sleep(2)
   print("One last question before you walk out of here alive.")
   time.sleep(2)
-  print("Which part of your computer is respponsible for generating graphics? ")
-  quiz_choice = ["A. The Fan,", "B. The CPU,", " C. The Graphics producer machine,", " D. GPU"]
+  print("What python Package allows you to design and code games?")
+  quiz_choice = ["A. Google Games,", "B. Pygames,", " C. Graphics Python Engine ,", " D. Vs Code"]
   print(quiz_choice[0])
   print(quiz_choice[1])
   print(quiz_choice[2])
   print(quiz_choice[3])
   print("What is thy answer? ")
   quiz_one = input("").lower()
-  time.sleep(1)
-  while quiz_one != "D":
+  time.sleep(2)
+  while quiz_one != "B":
     ("Wrong Answer. ")
-    print("Which part of your computer is respponsible for generating graphics? ")
-    quiz_choice = ["A. The Fan,", "B. The CPU,", " C. The Graphics producer machine,", " D. GPU"]
+    quiz_choice = ["A. Google Games,", "B. Pygames,", " C. Graphics Python Engine ,", " D. Vs Code"]
     time.sleep(2.5)
     print(quiz_choice[0])
     print(quiz_choice[1])
@@ -656,12 +655,18 @@ def final():
     print(quiz_choice[3])
     print("What is thy answer? ")
     quiz_one = input("").lower()
+  if quiz_one == "B":
+    print("The pufferfish finally unpuffs, and you pick up the Golden pufferfish.")
+    time.sleep(2)
+    print("The pufferfish quietly aeughs in the background. ")
+    time.sleep(2)
+    print("Congrats on beating the game!")
+
   
 
 print("-----------------------")
 print("Welcome to The Dungeon")
 print("-----------------------")
-# playsound.playsound("ello.mp3")
 
 
 # Asks for name input, which the person will be referred to as
@@ -711,16 +716,16 @@ time.sleep(2)
 print("You may choose to upgrade your health or your attack.")
 time.sleep(2)
 print("Which do you choose:")
-boost = input("").lower()
+boost = input("")
 if boost == "Attack":
     print("Your attack increased by 2 points!")
-    slash = 12
-elif boost == "Health":
+
+if boost == "Health":
     print("Your health increased by 2 points")
-    name_hp = 102
+
 else:
     print("Enter one of the upgrades you desire, please")
-    boost = input("").lower()
+    boost = input("")
 time.sleep(3)
 burn = 20
 prayer = 8
@@ -756,7 +761,7 @@ while quiz_one != "D":
     print(quiz_choice[2])
     print(quiz_choice[3])
     print("What is thy answer? ")
-    quiz_one = input("").lower()
+    quiz_one = input("")
 if quiz_one == "D":
     print("Well done!")
     time.sleep(1.5)
@@ -800,7 +805,13 @@ time.sleep(2)
 print("You can upgrade your hp, attack, Incinerate, and Prayer.")
 time.sleep(2)
 print("What would you like to upgrade this time? ")
-second_boost = input("").lower()
+second_boost = input("")
+name_hp = 100
+slash = 10
+if boost == "Health":
+  name_hp == 140
+if boost == "Attack":
+  slash == 18
 while second_boost != "Health" or "Attack" or "Incinerate" or "prayer":
     if second_boost == "Health":
         print("Your hp increased by 4 points!")
