@@ -6,7 +6,7 @@ import sys
 '''
 --------------------------
 Name: main.py
-Purpose: Advneture game that quizzes users about their computer knowledge based on this Computer Studies Course
+Purpose: Adventure game that quizzes users about their computer knowledge based on this Computer Studies Course
 
 Author: James Bian
 
@@ -57,7 +57,7 @@ def scary_rock():
     print("You encounter an armoured Gargoyle, looming over the large corridor!")
     time.sleep(2)
     while rock_hp > 0:
-        time.sleep(1)
+        time.sleep(2)
         print("What move will you use? ")
         print("Slash, Magic, Prayer: ")
         combat_c = input("")
@@ -150,7 +150,7 @@ def hobgoblin():
     print("You encounter a Hobgoblin, Guarding the entrance to the next room! ")
     time.sleep(2)
     while gob_hp > 0:
-        time.sleep(1)
+        time.sleep(2)
         print("What move will you use? ")
         print("Slash, Magic, Prayer: ")
         combat_c = input("")
@@ -316,7 +316,7 @@ def dummy():
         prayer_buff = 0
         name_hp = 100
         print("")
-        print("You healed for 8 hp")
+        print("You healed for 8 hp.")
         print(name, "'s hp: ", name_hp)
         prayer_buff = random.randint(1, 10)
         if prayer_buff > 8:
@@ -337,8 +337,8 @@ def dummy():
         print("You slashed the dummy for 10 damage!")
         print("dummy hp:", dummy_hith_2 - 10)
         if prayer_buff > 8:
-            print("")
-            print("You slashed the dummy for 12 damage! (Empowered due to prayer)")
+            print("") 
+            print("You slashed the dummy for 12 damage! (Empowered due to prayer!)")
             print("dummy hp:", dummy_hith_2 - 12)
 
     if combat_c == "Magic":
@@ -413,7 +413,7 @@ def Wyvren():
 
     # While Loop
     while drag_hp > 0:
-        time.sleep(1)
+        time.sleep(2)
         print("What move will you use? ")
         print("Slash, Magic, Prayer: ")
         combat_c = input("")
@@ -517,7 +517,7 @@ def left_path():
       time.sleep(2)
       print("Challenge? ")
       print(" Y/N?")
-      challenge = input("").lower()
+      challenge = input("")
 
 def right_path():
   print("You enter the dark, haunting room. ")
@@ -537,12 +537,12 @@ def choice():
     print("The second room smells of corpses, and a musty scent emanates from it. ")
     time.sleep(1.5)
     print("Which room do you choose to enter? ")
-    left_or_right = input("").lower()
+    left_or_right = input("")
     if left_or_right == "Left":
         left_path()
     if left_or_right == "Right":
         right_path()
-        
+
 def necromancer():
     print("A Necromancer comes out of the shadow and attacks you! ")
     prayer = 8
@@ -578,7 +578,7 @@ def necromancer():
             time.sleep(1)
             print("What move will you use? ")
             print("Slash, Magic, Prayer: ")
-            combat_c = input("").lower()
+            combat_c = input("")
 
         if combat_c == "Slash":
             print("")
@@ -592,26 +592,8 @@ def necromancer():
                 print("Necromancer hp:", dead_hp - slash)
             dead_hp = dead_hp - (slash + 2)
         elif combat_c == "Magic":
-            magic_type_1 = input("incinerate or Glaciate: ")
-            if magic_type_1 == "Incinerate":
-                print("you burnedNecromancer for 10 damage!")
-                dead_hp = dead_hp - burn
-                print("Necromancer hp: ", dead_hp)
-                cooldown = cooldown + 1
-                if cooldown % 3 != 0:
-                    print("You cannot use that spell quite yet, currently you are on turn", cooldown - 3)
-
-
-            elif magic_type_1 == "Glaciate":
-                Glaciate_rng = random.randint(1, 10)
-                if Glaciate_rng <= 6:
-                    print("You froze the Necromancer!")
-                    time.sleep(1.5)
-                elif Glaciate_rng > 7:
-                    print("Glaciate failed!")
-                    time.sleep(2)
-
-            print("")
+          print("You tried to use magic on the Necromancer, but he denied it with\n his Curse! ")
+          print("")
         elif combat_c == "Prayer":
             print("")
             print("You healed for 8 hp")
@@ -621,23 +603,20 @@ def necromancer():
             if prayer_buff > 8:
                 print("Your attack damage also got buffed!")
 
-        elif Glaciate_rng > 7:
-            print("The Necromancer curses you for 0 damage!")
-            time.sleep(1)
-            name_hp = name_hp - 11
-            print("Your hp: ", name_hp)
-        elif combat_c != "Magic" and combat_c != "attack" and combat_c != "Prayer":
-            print("Let's use an actual action")
-            print("What move will you use? ")
-        print("Slash, Magic, Prayer: ")
-        combat_c = input("").lower()
+        elif Glaciate_rng > 7:          
+          print("The Necromancer curses you for 0 damage!")
+          time.sleep(1)
+          name_hp = name_hp - 11
+          print("Your hp: ", name_hp)
+
         if dead_hp <= 0:
-            break
+          break
+        
         if name_hp <= 0:
-            time.sleep(1)
-            print("You died a sad an painful death, forgotten in the depths of  the dungeon. ")
-            time.sleep(2)
-            sys.exit()
+          time.sleep(1)
+          print("You died a sad an painful death, forgotten in the depths of  the dungeon. ")
+          time.sleep(2)
+          sys.exit()
 
 def final():
   print("When the Wyvren finally lays down it's head forever, you see the Legendary Pufferfish on a pedastal behind it. ")
@@ -653,7 +632,7 @@ def final():
   print(quiz_choice[2])
   print(quiz_choice[3])
   print("What is thy answer? ")
-  quiz_one = input("").lower()
+  quiz_one = input("")
   time.sleep(2)
   while quiz_one != "B":
     ("Wrong Answer. ")
@@ -664,13 +643,17 @@ def final():
     print(quiz_choice[2])
     print(quiz_choice[3])
     print("What is thy answer? ")
-    quiz_one = input("").lower()
+    quiz_one = input("")
   if quiz_one == "B":
     print("The pufferfish finally unpuffs, and you pick up the Golden pufferfish.")
     time.sleep(2)
     print("The pufferfish quietly aeughs in the background. ")
     time.sleep(2)
     print("Congrats on beating the game!")
+    time.sleep(2)
+    print("Special Thanks to: me ")
+    time.sleep(3)
+    sys.exit()
 
   
 
@@ -682,7 +665,7 @@ print("-----------------------")
 # Asks for name input, which the person will be referred to as
 time.sleep(1.5)
 name = input("State your name: ")
-time.sleep(0.5)
+time.sleep(1)
 # If name us blank, it loops the code again
 while name == "":
     print("Enter an actual name, loser.")
@@ -733,7 +716,7 @@ if boost == "Attack":
 if boost == "Health":
     print("Your health increased by 2 points")
 
-else:
+if boost != "Health" and boost != "Attack":
     print("Enter one of the upgrades you desire, please")
     boost = input("")
 time.sleep(3)
@@ -752,14 +735,14 @@ print("The word question presents you with a question about... computers????")
 time.sleep(3)
 print("Answer thee next question correct to passeth onto thy next dungeon room.\n (Answer with the correct letter.) ")
 time.sleep(2)
-print("Which part of your computer is respponsible for generating graphics? ")
+print("Which part of your computer is responsible for generating graphics? ")
 quiz_choice = ["A. The Fan,", "B. The CPU,", " C. The Graphics producer machine,", " D. GPU"]
 print(quiz_choice[0])
 print(quiz_choice[1])
 print(quiz_choice[2])
 print(quiz_choice[3])
 print("What is thy answer? ")
-quiz_one = input("").lower()
+quiz_one = input("")
 time.sleep(1)
 while quiz_one != "D":
     ("Wrong Answer. ")
@@ -772,37 +755,37 @@ while quiz_one != "D":
     print(quiz_choice[3])
     print("What is thy answer? ")
     quiz_one = input("")
-if quiz_one == "D":
-    print("Well done!")
-    time.sleep(1.5)
-    print("Onto the next one. ")
-    time.sleep(2)
-    print("Which type of malware, when infecting a computer, locks the user out, and demands money in return? ")
-    quiz_choice_2 = ["A. SpyWare,", "B. Adware,", " C. Ransomeware,", " D. The bad virus"]
-    time.sleep(2.5)
-    print(quiz_choice_2[0])
-    print(quiz_choice_2[1])
-    print(quiz_choice_2[2])
-    print(quiz_choice_2[3])
-    print("What is thy answer? ")
-    quiz_two = input("").lower()
-    while quiz_two != "C":
-        print("Wrong answer")
-        time.sleep(2)
-        print("Which type of malware, when infecting a computer, locks the user out, and demands money in return? ")
-        quiz_choice_2 = ["A. SpyWare,", "B. Adware,", " C. Ransomeware,", " D. The bad virus"]
-        time.sleep(2.5)
-        print(quiz_choice_2[0])
-        print(quiz_choice_2[1])
-        print(quiz_choice_2[2])
-        print(quiz_choice_2[3])
-        print("What is thy answer? ")
-        quiz_two = input("").lower()
-    if quiz_two == "C":
-        print("Well done!")
-        time.sleep(2)
-        print("Onto the next room. ")
-        scary_rock()
+    if quiz_one == "D":
+      print("Well done!")
+      time.sleep(1.5)
+      print("Onto the next one. ")
+      time.sleep(2)
+      print("Which type of malware, when infecting a computer, locks the user out, and demands money in return? ")
+      quiz_choice_2 = ["A. SpyWare,", "B. Adware,", " C. Ransomeware,", " D. The bad virus"]
+      time.sleep(2.5)
+      print(quiz_choice_2[0])
+      print(quiz_choice_2[1])
+      print(quiz_choice_2[2])
+      print(quiz_choice_2[3])
+      print("What is thy answer? ")
+      quiz_two = input("")
+      while quiz_two != "C":
+          print("Wrong answer")
+          time.sleep(2)
+          print("Which type of malware, when infecting a computer, locks the user out, and demands money in return? ")
+          quiz_choice_2 = ["A. SpyWare,", "B. Adware,", " C. Ransomeware,", " D. The bad virus"]
+          time.sleep(2.5)
+          print(quiz_choice_2[0])
+          print(quiz_choice_2[1])
+          print(quiz_choice_2[2])
+          print(quiz_choice_2[3])
+          print("What is thy answer? ")
+          quiz_two = input("")
+          if quiz_two == "C":
+            print("Well done!")
+            time.sleep(2)
+            print("Onto the next room. ")
+            scary_rock()
 
 
 
@@ -869,7 +852,7 @@ print(quiz_choice[1])
 print(quiz_choice[2])
 print(quiz_choice[3])
 print("What is thy answer? ")
-quiz_one = input("").lower()
+quiz_one = input("")
 time.sleep(1)
 while quiz_one != "A":
     ("Wrong Answer. ")
@@ -881,7 +864,16 @@ while quiz_one != "A":
     print(quiz_choice[2])
     print(quiz_choice[3])
     print("What is thy answer? ")
-    quiz_one = input("").lower()
+    quiz_one = input("")
 if quiz_one == "A":
   print("The door unlocks, and you pass onto the next room. ")
   choice()
+
+  print("At the end of the room, there was no Legendary Pufferfish.")
+  time.sleep(2)
+  print("However, the room did contain the legendary kraken slayer. ")
+  time.sleep(2)
+  print("You equip the kraken slayer, and try the other path instead. ")
+  slash = 80
+  left_path()
+
